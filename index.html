@@ -125,19 +125,92 @@
 			<h2>Доступність модуля</h2>
 		<ul>
 			<li>Змінна sys.path</li>
+			<li>Пошук зліва направо</li>
 			<li>Виконання зверху вниз</li>
 			<li>Змінна __name__</li>
 		</ul>
 		</ul>
   </section>
+
 	<section class="slide">
-    <h2>Nonlocal або enclosing змінні</h2>
+			<h2>Пакет</h2>
+		<ul>
+			<li>Директорія з модулями</li>
+			<li>Файл __init__.py</li>
+			<li>Відносний шлях</li>
+      <p>
+some_module
+├── __init__.py
+├── bar
+│   ├── __init__.py
+│   └── boo.py
+└── foo.py
+      </p>
+		</ul>
+  </section>
+
+
+	<section class="slide">
+			<h2>Фасад</h2>
+		<ul>
+			<li>Що писати в __init__.py?</li>
+			<li>Реалізація фасада</li>
+			<li>Імпорт foo i boo в __init__.py</li>
+			<li>from foo import *</li>
+			<li>from bar import *</li>
+			<li>Реалізація з різним кодом</li>
+		</ul>
+  </section>
+
+
+	<section class="slide">
+			<h2>Робота з файлами, input</h2>
+		<ul>
+			<li>input()</li>
+			<li>Функція open</li>
+			<li>Modes: r, w, x, a, +, b, t</li>
+			<li>Encoding, errors</li>
+			<li>open('some-file', 'a' encoding='cp1251' errors='ignore')</li>
+			<li>read, readline, readlines</li>
+			<li>write, writelines</li>
+			<li>tell, seek</li>
+			<li>print("smth", file=file, flush=True)</li>
+			<li>Не забудьте закрити або менеджери контексту</li>
+		</ul>
+		</ul>
+  </section>
+
+	<section class="slide">
+			<h2>Робота з файловою системою, os</h2>
+		<ul>
+			<li>os.name, os.uname()</li>
+			<li>chdir, chmod, chown, getcwd</li>
+			<li>listdir, makedir</li>
+			<li>os.walk, os.system</li>
+		</ul>
+		</ul>
+  </section>
+
+	<section class="slide">
+			<h2>Робота з файловою системою, os</h2>
+		<ul>
+			<li>os.name, os.uname()</li>
+			<li>chdir, chmod, chown, getcwd</li>
+			<li>listdir, makedir</li>
+			<li>os.walk, os.system</li>
+		</ul>
+		</ul>
+  </section>
+
+	<section class="slide">
+    <h2>Decorator</h2>
         <pre>
-          <code>def wrapper():</code>
-          <code>    a = 6</code>
-          <code>    def inner ():</code>
-          <code class="mark">        nonlocal a # From python 3</code>
-          <code>        a += 5</code>
+          <code>def deco(func):</code>
+          <code>    def wrapper(*args, **kwargs):</code>
+          <code>        print ("Starting deco")</code>
+          <code>        func(*args, **kwargs)</code>
+          <code>        print("Finishing deco"</code>
+          <code>    return wrapper</code>
         </pre>
 		</ul>
   </section>
