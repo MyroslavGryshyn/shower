@@ -34,6 +34,16 @@
 					}
 		</style>
 	</section>
+
+	<section class="slide">
+		<h2>Домашні завдання</h2>
+		<pre>
+			<code>4/100/400</code>
+			<code>set methods</code>
+			<code>%timeit</code>
+		</pre>
+  </section>
+
 	<section class="slide">
 		<h2>Import</h2>
 		<pre>
@@ -46,18 +56,18 @@
 		</pre>
   </section>
 
-  <section>
+	<section class="slide">
 		<h2>Як імпортувати</h2>
 		<ul>
 			<li>Імпорти на початку файлу</li>
 			<li>import потім from ... import ...</li>
 			<li>import sys.getsizeof</li>
 			<li>В лексикографічному порядку </li>
-		</li>
+		</ul>
   </section>
 
 
-  </section>
+	<section class="slide">
 		<pre>
 			<code>import sys</code>
 			<code>import sys, os</code>
@@ -76,6 +86,16 @@
 			<li class="next">Коли використовувати</li>
 			<li class="next">Дублювання і перезаписування функцій</li>
 			<li class="next">Змінна __all__</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>Циклічний імпорт</h2>
+		<ul>
+			<li>Коли виникає</li>
+			<li class="next">Винести загальний функціонал в окремий модуль</li>
+			<li class="next">Сховати імпорт в функцію</li>
+			<li class="next">import в кінці файлу</li>
 		</ul>
 	</section>
 
@@ -138,17 +158,15 @@
 			<li>Директорія з модулями</li>
 			<li>Файл __init__.py</li>
 			<li>Відносний шлях</li>
-      <p>
-some_module
-├── __init__.py
-├── bar
-│   ├── __init__.py
-│   └── boo.py
-└── foo.py
-      </p>
+      <li>some_module</li>
+      <li>├── __init__.py</li>
+      <li>├── bar</li>
+      <li>│   ├── __init__.py</li>
+      <li>│   └── boo.py</li>
+      <li>└── foo.py</li>
+
 		</ul>
   </section>
-
 
 	<section class="slide">
 			<h2>Фасад</h2>
@@ -159,6 +177,7 @@ some_module
 			<li>from foo import *</li>
 			<li>from bar import *</li>
 			<li>Реалізація з різним кодом</li>
+			<li>Плючи - зручність, мінус - час</li>
 		</ul>
   </section>
 
@@ -166,13 +185,12 @@ some_module
 	<section class="slide">
 			<h2>Робота з файлами, input</h2>
 		<ul>
-			<li>input()</li>
+			<li>input() і argv</li>
 			<li>Функція open</li>
 			<li>Modes: r, w, x, a, +, b, t</li>
 			<li>Encoding, errors</li>
 			<li>open('some-file', 'a' encoding='cp1251' errors='ignore')</li>
-			<li>read, readline, readlines</li>
-			<li>write, writelines</li>
+			<li>read, readline, readlines, write, writelines</li>
 			<li>tell, seek</li>
 			<li>print("smth", file=file, flush=True)</li>
 			<li>Не забудьте закрити або менеджери контексту</li>
@@ -192,12 +210,17 @@ some_module
   </section>
 
 	<section class="slide">
-			<h2>Робота з файловою системою, os</h2>
+			<h2>Рекурсія</h2>
 		<ul>
-			<li>os.name, os.uname()</li>
-			<li>chdir, chmod, chown, getcwd</li>
-			<li>listdir, makedir</li>
-			<li>os.walk, os.system</li>
+			<li>Перевірка ряду</li>
+			<li>Числа Фібоначчі</li>
+        <pre>
+          <code>def fibo(n):</code>
+          <code>    if n<0: return "Error"</code>
+          <code>    if n==1 or n==2: return 1</code>
+          <code>    return fib(n-1) + fib(n-2)</code>
+        </pre>
+			<li>Рекурсія на практиці - os.walk</li>
 		</ul>
 		</ul>
   </section>
@@ -212,84 +235,23 @@ some_module
           <code>        print("Finishing deco"</code>
           <code>    return wrapper</code>
         </pre>
-		</ul>
   </section>
 
 	<section class="slide">
-    <h2>Принцип LEGB</h2>
-    <ul>
-			<li>Local - пошук в функції</li>
-			<li>Enclosing - пошук в будь-якій зовнішній функції</li>
-			<li>Global - пошук в модулі</li>
-			<li>Built-in</li>
-		</ul>
+    <h2>Decorator with args</h2>
+        <pre>
+          <code>def deco(arg):</code>
+          <code>    def wrapper(func):</code>
+          <code>        def inner(*args, **kwargs):</code>
+          <code>            print ("Starting deco")</code>
+          <code>            func(*args, **kwargs)</code>
+          <code>            print("Finishing deco"</code>
+          <code>        return wrapper</code>
+          <code>    return wrapper</code>
+        </pre>
   </section>
 
-	<section class="slide" id="picture">
-		<img src="pictures/built-in.png" alt="" class="cover">
-		<style>
-			#picture h2 {
-				color:#FFF;
-				}
-		</style>
-  </section>
 
-	<section class="slide">
-    <h2>Try/except/finally</h2>
-    <pre>
-      <code>def func():</code>
-      <code>    """One line docstring."""</code>
-      <code>    myfile.write("the Answer is: ")</code>
-      <code>    raise ValueError</code>
-      <code>except TypeError:</code>
-      <code>    import foobar</code>
-      <code>finally:</code>
-      <code>    myfile.close()</code>
-    </pre>
-  </section>
-
-	<section class="slide">
-    <h2>Try/except/finally</h2>
-    <ul>
-			<li>finally виконується при виході з блоку try, не залежно від вийнятків</li>
-			<li>finally виконується при наявності break або continue</li>
-			<li>finally виконується при вийнятку в exception</li>
-      <li>finally виконується до return в блоці try чи except</li>
-		</ul>
-  </section>
-
-	<section class="slide">
-    <h2>Try/except/finally</h2>
-    <pre>
-      <code>myfile = open("test.txt", "w")</code>
-      <code>try:</code>
-      <code>    myfile.write("the Answer is: ")</code>
-      <code>    raise ValueError</code>
-      <code>except TypeError:</code>
-      <code>    import foobar</code>
-      <code>finally:</code>
-      <code>    myfile.close()</code>
-    </pre>
-  </section>
-
-	<section class="slide">
-    <h2>Менеджер контексту</h2>
-    <p>При роботі з ресурсом(файл, сокет і т.д.) його потрібно звільнити
-    <pre>
-      <code>with open("test.txt", "w") as f:</code>
-      <code>    f.write("the Answer is: ")</code>
-    </pre>
-  </section>
-
-	<section class="slide">
-    <h2>Вкладені менеджери контексту</h2>
-    <pre>
-      <code>with open("test.txt", "w") as t, \</code>
-      <code>     open("index.html", 'r') as i:</code>
-      <code>    i.read()</code>
-      <code>    t.write("the Answer is: ")</code>
-    </pre>
-  </section>
 	<section class="slide">
     <h2>Вкладені менеджери контексту</h2>
     <pre>
@@ -300,9 +262,6 @@ some_module
     </pre>
   </section>
   <section>
-https://www.python.org/dev/peps/pep-0257/
-http://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html
-https://compscicenter.ru/courses/python/2015-autumn/classes/1520/
   </section>
 	<!--
 		To hide progress bar from entire presentation
@@ -314,7 +273,3 @@ https://compscicenter.ru/courses/python/2015-autumn/classes/1520/
 	<!-- Photos by John Carey, fiftyfootshadows.net -->
 </body>
 </html>
-
-https://docs.google.com/document/d/1NLzwXvzMjYgayXyrA98ftzd1J-8Y1FglUHP4zz3rxT0/edit
-https://compscicenter.ru/courses/python/2015-autumn/classes/1556/
-http://pycourse.com.ua/
