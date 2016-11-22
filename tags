@@ -1,59 +1,6 @@
 !_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
 !_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
-!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
-!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
-!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
-!_TAG_PROGRAM_VERSION	Development	/ccd8f6a/
-0	package.json	/^    "pictures\/**",$/;"	s	array:files
-0	package.json	/^    "shower",$/;"	s	array:keywords
-1	package.json	/^    "index.html",$/;"	s	array:files
-1	package.json	/^    "presentation",$/;"	s	array:keywords
-2	package.json	/^    "LICENSE.md",$/;"	s	array:files
-2	package.json	/^    "template"$/;"	s	array:keywords
-3	package.json	/^    "README.md"$/;"	s	array:files
-archive	package.json	/^    "archive": "gulp archive",$/;"	s	object:scripts
-author	package.json	/^  "author": {$/;"	o
-bugs	package.json	/^  "bugs": {$/;"	o
-del	gulpfile.js	/^const del = require('del');$/;"	C
-del	package.json	/^    "del": "^2.2.1",$/;"	s	object:devDependencies
-dependencies	package.json	/^  "dependencies": {$/;"	o
-description	package.json	/^  "description": "Shower HTML presentation engine",$/;"	s
-devDependencies	package.json	/^  "devDependencies": {$/;"	o
-files	package.json	/^  "files": [$/;"	a
-fs	gulpfile.js	/^const fs = require('fs');$/;"	C
-fs	package.json	/^    "fs": "0.0.2",$/;"	s	object:devDependencies
-gulp	gulpfile.js	/^const gulp = require('gulp');$/;"	C
-gulp	package.json	/^    "gulp": "^3.9.1",$/;"	s	object:devDependencies
-gulp-gh-pages	package.json	/^    "gulp-gh-pages": "^0.5.4",$/;"	s	object:devDependencies
-gulp-rename	package.json	/^    "gulp-rename": "^1.2.2",$/;"	s	object:devDependencies
-gulp-replace	package.json	/^    "gulp-replace": "^0.5.4",$/;"	s	object:devDependencies
-gulp-rsync	package.json	/^    "gulp-rsync": "0.0.6",$/;"	s	object:devDependencies
-gulp-zip	package.json	/^    "gulp-zip": "^3.2.0",$/;"	s	object:devDependencies
-homepage	package.json	/^  "homepage": "https:\/\/github.com\/shower\/shower",$/;"	s
-keywords	package.json	/^  "keywords": [$/;"	a
-license	package.json	/^  "license": "MIT",$/;"	s
-merge	gulpfile.js	/^const merge = require('merge-stream');$/;"	C
-merge-stream	package.json	/^    "merge-stream": "^1.0.0",$/;"	s	object:devDependencies
-name	package.json	/^    "name": "Vadim Makeev",$/;"	s	object:author
-name	package.json	/^  "name": "shower",$/;"	s
-pages	gulpfile.js	/^const pages = require('gulp-gh-pages');$/;"	C
-path-exists-cli	package.json	/^    "path-exists-cli": "^1.0.0",$/;"	s	object:devDependencies
-prepare	package.json	/^    "prepare": "gulp prepare",$/;"	s	object:scripts
-publish	package.json	/^    "publish": "gulp publish",$/;"	s	object:scripts
-rename	gulpfile.js	/^const rename = require('gulp-rename');$/;"	C
-replace	gulpfile.js	/^const replace = require('gulp-replace');$/;"	C
-repository	package.json	/^  "repository": {$/;"	o
-rsync	gulpfile.js	/^const rsync = require('gulp-rsync');$/;"	C
-run-sequence	package.json	/^    "run-sequence": "^1.2.2"$/;"	s	object:devDependencies
-scripts	package.json	/^  "scripts": {$/;"	o
-sequence	gulpfile.js	/^const sequence = require('run-sequence');$/;"	C
-shower-core	package.json	/^    "shower-core": "^2.0.7",$/;"	s	object:dependencies
-shower-material	package.json	/^    "shower-material": "^1.0.6",$/;"	s	object:dependencies
-shower-ribbon	package.json	/^    "shower-ribbon": "^2.0.7"$/;"	s	object:dependencies
-test	package.json	/^    "test": "npm run prepare && ls prepared && npm run archive && path-exists archive.zip"$/;"	s	object:scripts
-type	package.json	/^    "type": "git",$/;"	s	object:repository
-url	package.json	/^    "url": "git:\/\/github.com\/shower\/shower.git"$/;"	s	object:repository
-url	package.json	/^    "url": "http:\/\/github.com\/shower\/shower\/issues"$/;"	s	object:bugs
-url	package.json	/^    "url": "http:\/\/pepelsbey.net\/"$/;"	s	object:author
-version	package.json	/^  "version": "2.1.4",$/;"	s
-zip	gulpfile.js	/^const zip = require('gulp-zip');$/;"	C
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
